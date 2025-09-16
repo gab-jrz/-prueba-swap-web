@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
   }
   
   /* Contenedor de productos y botones */
@@ -14,23 +15,40 @@
   /* Contenedor de las tarjetas de productos */
   .product-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas desktop */
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo */
+    gap: 32px; /* Más separación entre tarjetas */
     justify-content: center;
-    align-items: stretch; /* Evita recortes de altura en cards */
+    align-items: stretch;
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
   }
   
   /* Estilos de la tarjeta de producto */
-  .product-card {
-    background-color: #f9f9f9;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  .product-card,
+  .product-card-premium {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+    padding: 20px;
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+    min-height: 420px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
   }
   
-  .product-card:hover {
-    transform: translateY(-10px);
+  .product-card:hover,
+  .product-card-premium:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.15);
   }
   
   /* Botones "Mostrar más" y "Mostrar menos" */
@@ -68,27 +86,21 @@
   /* Responsive grid y espaciados */
   @media (max-width: 1200px) {
     .product-list {
-      grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas en pantallas medianas grandes */
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
     }
   }
 
-  @media (max-width: 900px) {
-    main {
-      padding: 18px 0; /* Reducir padding vertical en tablet */
-    }
+  @media (max-width: 800px) {
     .product-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas en tablet */
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
     }
-    button {
-      width: 200px;
-      font-size: 15px;
-    }
-    /* Ajustes suaves para secciones superiores */
-    .search-section-moved {
-      padding: 16px !important;
-      margin: 16px 0 !important;
+    .product-card,
+    .product-card-premium {
+      max-width: 100%;
+      min-height: 340px;
+      padding: 12px;
     }
   }
 
@@ -124,4 +136,7 @@
   footer {
     margin-top: auto; /* Esto asegura que el footer se mueva siempre al fondo */
   }
-  
+
+  body {
+    overflow-x: hidden; /* Evita desplazamiento horizontal global */
+  }

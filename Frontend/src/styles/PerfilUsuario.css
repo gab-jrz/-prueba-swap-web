@@ -1174,3 +1174,18 @@
     margin-left: 6px !important;
   }
 }
+
+/* Mis Favoritos - Asegurando diseño de grilla */
+.mis-favoritos {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mis-favoritos .product-list {
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}

@@ -3542,7 +3542,7 @@ const PerfilUsuario = () => {
                       condicion={producto.condicion}
                       valorEstimado={producto.valorEstimado}
                       disponible={producto.disponible}
-                      onConsultar={() => navigate(`/producto/${producto.id}`)}
+                      onConsultar={() => navigate(`/producto/${producto._id}`)}
                       hideFavoriteButton
                       showRemoveFavorite
                       onRemoveFavorite={() =>
