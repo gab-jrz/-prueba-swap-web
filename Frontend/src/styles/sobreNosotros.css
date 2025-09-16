@@ -1,0 +1,95 @@
+.sobre-nosotros .section-title {
+  position: relative;
+  display: inline-block;
+  color: #111 !important; /* fuerza negro para títulos */
+}
+
+.sobre-nosotros .section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: var(--bs-primary);
+  transition: width 300ms ease;
+}
+
+.sobre-nosotros section:hover .section-title::after {
+  width: 100%;
+}
+
+/* Animación de entrada sutil */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInUp 420ms ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards del equipo */
+.team-card {
+  border-top: 4px solid var(--bs-primary);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+}
+
+/* Avatar efecto sutil */
+.avatar {
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+.team-card:hover .avatar {
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+  transform: scale(1.02);
+}
+
+/* Respeta usuarios con movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up,
+  .team-card,
+  .avatar,
+  .section-title::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Estilos para los botones de GitHub */
+.github-btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.github-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.github-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.github-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Responsive para los botones */
+@media (max-width: 768px) {
+  .github-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}

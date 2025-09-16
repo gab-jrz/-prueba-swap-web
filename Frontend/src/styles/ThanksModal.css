@@ -1,0 +1,7 @@
+.thanks-modal-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.55);backdrop-filter:blur(3px);z-index:1000}
+.thanks-modal-card{width:min(92vw,420px);background:linear-gradient(180deg,#ffffff, #f9fafb);border-radius:16px;box-shadow:0 20px 45px rgba(0,0,0,.18);padding:28px 22px;text-align:center;border:1px solid rgba(99,102,241,.2)}
+.thanks-modal-icon{font-size:42px;margin-bottom:8px}
+.thanks-modal-title{margin:0 0 6px;font-size:1.4rem;background:linear-gradient(90deg,#6366f1,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.thanks-modal-message{margin:0 0 16px;color:#374151}
+.thanks-modal-close{border:0;background:linear-gradient(90deg,#4f46e5,#7c3aed);color:#fff;border-radius:10px;padding:10px 16px;cursor:pointer;box-shadow:0 8px 18px rgba(99,102,241,.35);transition:transform .15s ease, box-shadow .15s ease}
+.thanks-modal-close:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(99,102,241,.45)}

@@ -1,0 +1,249 @@
+/* ===================================
+   CORRECCIONES ESPECÍFICAS PARA PERFIL PÚBLICO
+   =================================== */
+
+/* 1. FOTO DE PERFIL AGRANDADA Y DATOS PERSONALES MEJORADOS */
+.perfil-avatar {
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid #fff !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.perfil-avatar:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.perfil-avatar-container {
+  flex: 0 0 200px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.perfil-detalles-premium {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.2rem !important;
+  margin-top: 1.5rem !important;
+  padding: 2rem !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(102, 126, 234, 0.1) !important;
+  width: 100% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.detalle-item-premium {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.08) !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
+}
+
+.detalle-item-premium:hover {
+  background: rgba(102, 126, 234, 0.02) !important;
+  border-radius: 8px !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.detalle-item-premium:last-child {
+  border-bottom: none !important;
+}
+
+.detalle-icon-premium {
+  color: #667eea !important;
+  flex-shrink: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.detalle-label-premium {
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+  min-width: 100px !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.01em !important;
+}
+
+.detalle-value-premium {
+  color: #4a5568 !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  flex: 1 !important;
+}
+
+/* 2. MEJORA DE FUENTES PARA TÍTULOS */
+.seccion-titulo-premium {
+  font-size: 2.4rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  letter-spacing: -0.03em !important;
+  position: relative !important;
+  font-family: 'Poppins', 'Inter', sans-serif !important;
+  text-shadow: 0 4px 8px rgba(102, 126, 234, 0.15) !important;
+}
+
+.seccion-titulo-premium::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -12px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 2px !important;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+}
+
+.estadisticas-titulo-premium {
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  color: #2c3e50 !important;
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  letter-spacing: -0.03em !important;
+  font-family: 'Poppins', 'Inter', sans-serif !important;
+  text-shadow: 0 4px 8px rgba(102, 126, 234, 0.15) !important;
+}
+
+/* 3. ALINEACIÓN DE CARDS - TODAS DEL MISMO TAMAÑO */
+.productos-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2.5rem !important;
+  padding: 0 !important;
+}
+
+.product-card-premium {
+  background: white !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  height: 480px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  position: relative !important;
+  min-width: 350px !important;
+  max-width: none !important;
+}
+
+.product-card-premium:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(102, 126, 234, 0.2) !important;
+}
+
+.product-content {
+  padding: 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  height: 100% !important;
+}
+
+.product-img-wrap {
+  height: 200px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.product-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 4. BOTÓN CONSULTAR REDISEÑADO - ESTILO COMO "EDITAR PERFIL" */
+.product-consultar-btn {
+  margin-top: auto !important;
+  width: 100% !important;
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 12px 24px !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.01em !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-family: 'Inter', 'Poppins', sans-serif !important;
+  text-transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 44px !important;
+}
+
+.product-consultar-btn::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.product-consultar-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #0891b2 100%) !important;
+}
+
+.product-consultar-btn:hover::before {
+  left: 100% !important;
+}
+
+.product-consultar-btn:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .product-card-premium {
+    height: 450px !important;
+    min-width: 300px !important;
+  }
+  
+  .seccion-titulo-premium {
+    font-size: 2rem !important;
+  }
+  
+  .estadisticas-titulo-premium {
+    font-size: 1.8rem !important;
+  }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diagnóstico CORS/API - SwapWeb</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; padding: 20px; line-height: 1.4; }
+    .ok { color: #059669; }
+    .bad { color: #b91c1c; }
+    code, pre { background: #f3f4f6; padding: 8px; border-radius: 6px; display: block; overflow-x: auto; }
+    .small { font-size: 12px; color: #6b7280; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin: 12px 0; }
+    button { background: #2563eb; color: white; border: none; padding: 10px 14px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Diagnóstico CORS/API</h1>
+  <p>Esta página realiza pruebas desde tu navegador hacia el backend en Railway.</p>
+
+  <div class="card">
+    <h2>Backend health</h2>
+    <button id="btnHealth">Probar /api/health</button>
+    <pre id="outHealth">(sin ejecutar)</pre>
+  </div>
+
+  <div class="card">
+    <h2>Chequeo CORS</h2>
+    <button id="btnCors">Probar /api/cors-check</button>
+    <pre id="outCors">(sin ejecutar)</pre>
+    <p class="small">Si ves error de CORS aquí, el frontend y backend no están autorizados entre sí.</p>
+  </div>
+
+  <script>
+    const BASE = 'https://swapweb-pf-production.up.railway.app';
+    const get = async (path) => {
+      const res = await fetch(`${BASE}${path}`, { credentials: 'include' });
+      const text = await res.text();
+      try { return JSON.stringify(JSON.parse(text), null, 2); } catch { return text; }
+    };
+
+    document.getElementById('btnHealth').onclick = async () => {
+      const el = document.getElementById('outHealth');
+      el.textContent = 'Cargando...';
+      try {
+        el.textContent = await get('/api/health');
+      } catch (e) {
+        el.textContent = `ERROR: ${e?.message || e}`;
+      }
+    };
+
+    document.getElementById('btnCors').onclick = async () => {
+      const el = document.getElementById('outCors');
+      el.textContent = 'Cargando...';
+      try {
+        el.textContent = await get('/api/cors-check');
+      } catch (e) {
+        el.textContent = `ERROR: ${e?.message || e}`;
+      }
+    };
+  </script>
+</body>
+</html>

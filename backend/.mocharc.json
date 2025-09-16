@@ -1,0 +1,10 @@
+{
+  "extension": ["js"],
+  "spec": "tests/**/*.test.js",
+  "timeout": 10000,
+  "reporter": "spec",
+  "colors": true,
+  "bail": false,
+  "recursive": true,
+  "exit": true
+} 

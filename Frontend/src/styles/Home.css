@@ -1,0 +1,127 @@
+/* Contenedor principal */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Contenedor de productos y botones */
+  main {
+    flex: 1;
+    padding: 24px 0; /* Espaciado entre las tarjetas y los botones */
+  }
+  
+  /* Contenedor de las tarjetas de productos */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas desktop */
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch; /* Evita recortes de altura en cards */
+  }
+  
+  /* Estilos de la tarjeta de producto */
+  .product-card {
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Botones "Mostrar más" y "Mostrar menos" */
+  button {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-outline-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .btn-outline-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  /* Footer siempre al fondo */
+  footer {
+    margin-top: auto;
+  }
+  
+  /* Responsive grid y espaciados */
+  @media (max-width: 1200px) {
+    .product-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas en pantallas medianas grandes */
+      gap: 22px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    main {
+      padding: 18px 0; /* Reducir padding vertical en tablet */
+    }
+    .product-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas en tablet */
+      gap: 18px;
+    }
+    button {
+      width: 200px;
+      font-size: 15px;
+    }
+    /* Ajustes suaves para secciones superiores */
+    .search-section-moved {
+      padding: 16px !important;
+      margin: 16px 0 !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding: 14px 0; /* Compacto en mobile */
+    }
+    .product-list {
+      grid-template-columns: 1fr; /* 1 columna en mobile */
+      gap: 14px;
+    }
+    button {
+      width: 100%; /* Botones full-width en mobile */
+      font-size: 14px;
+    }
+    .results-info p {
+      font-size: 0.9rem;
+    }
+    .d-flex {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .search-section-moved {
+      padding: 12px !important;
+      margin: 12px 0 !important;
+    }
+    .product-card {
+      margin-bottom: 12px; /* Espacio compacto entre cards en mobile */
+    }
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: auto; /* Esto asegura que el footer se mueva siempre al fondo */
+  }
+  

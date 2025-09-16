@@ -1,0 +1,1176 @@
+/* PerfilUsuario.css */
+
+/* Scrollbar personalizado premium para el chat */
+.chat-messages {
+  scrollbar-width: thin;
+  scrollbar-color: #b0e0ff #f7faff;
+  overscroll-behavior: contain;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 10px;
+  background: #f7faff;
+  border-radius: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #b0e0ff 0%, #92d1fa 100%);
+  border-radius: 8px;
+  border: 2px solid #f7faff;
+  min-height: 40px;
+  box-shadow: 0 2px 6px #0001;
+  transition: background 0.3s;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7fc7f9 0%, #5bb1e6 100%);
+}
+
+.chat-messages::-webkit-scrollbar-corner {
+  background: #f7faff;
+}
+
+
+.perfil-usuario-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-usuario-content {
+  flex: 1;
+  padding: 20px;
+  max-width: min(1600px, 95vw);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.perfil-header {
+  display: flex;
+  flex-direction: column; /* Stack avatar above name */
+  align-items: center;    /* Center horizontally */
+  text-align: center;     /* Center text like name */
+  gap: 20px;
+  padding: 36px 32px 28px 32px;
+  background: linear-gradient(120deg, rgba(120,90,255,0.13) 0%, rgba(80,180,255,0.11) 100%), rgba(255,255,255,0.85);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(80,90,180,0.10), 0 1.5px 6px 0 rgba(120,90,255,0.09);
+  margin-bottom: 28px;
+  position: relative;
+  overflow: visible;
+  backdrop-filter: blur(8px);
+}
+
+.perfil-imagen {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8e7fff 0%, #4faaff 100%);
+  padding: 4px;
+  box-shadow: 0 4px 24px 0 rgba(120,90,255,0.19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.perfil-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 2px 16px 0 rgba(120,90,255,0.13);
+  background: #f7f7fa;
+  border: 4px solid #fff;
+}
+
+
+.perfil-info {
+  flex: 0 0 auto; /* prevent stretching in column layout */
+}
+
+.perfil-info h1 {
+  margin: 0 0 18px 0;
+  color: #3b247a;
+  font-size: 2.7rem;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+  background: linear-gradient(90deg, #8e7fff 0%, #4faaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 16px #b0e0ff22, 0 1.5px 6px #8e7fff0c;
+}
+
+/* Optional spacing tweak: give the avatar a bit of bottom margin for breathing room */
+.perfil-imagen { margin-bottom: 6px; }
+
+
+.perfil-stats {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 18px;
+  align-items: flex-end;
+}
+.stat {
+  background: rgba(142,127,255,0.10);
+  border-radius: 16px;
+  padding: 10px 22px 8px 22px;
+  box-shadow: 0 2px 8px 0 rgba(120,90,255,0.06);
+  min-width: 90px;
+}
+.stat-label {
+  color: #6d6c8a;
+  font-size: 0.97rem;
+  font-weight: 600;
+  margin-top: 2px;
+  display: block;
+}
+.stat-value {
+  color: #4e2ccf;
+  font-size: 1.32rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-label {
+  color: #666;
+}
+
+.perfil-detalles {
+  margin-bottom: 18px;
+  padding: 12px 40px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  box-shadow: 0 1.5px 6px 0 rgba(120,90,255,0.06);
+  font-size: 1.07rem;
+  color: #4a498a;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border: 1.5px solid #e8e6fa;
+  max-width: 600px;
+  width: 100%;
+}
+.perfil-detalles p {
+  margin: 5px 0;
+  color: #4a498a;
+  font-size: 1.07rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.perfil-detalles strong {
+  color: #7c5fff;
+  font-weight: 700;
+  margin-right: 3px;
+}
+
+.perfil-detalles p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.perfil-acciones {
+  display: flex;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.btn-editar, .btn-configuracion {
+  background: linear-gradient(90deg, #8e7fff 0%, #4faaff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 32px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #b0e0ff22;
+  cursor: pointer;
+  transition: background 0.16s, transform 0.12s, box-shadow 0.18s;
+  outline: none;
+}
+.perfil-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn-editar, .btn-configuracion {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(120,90,255,0.07);
+  letter-spacing: 0.02em;
+  outline: none;
+  margin-bottom: 2px;
+}
+
+.btn-editar {
+  background: linear-gradient(90deg, #8e7fff 0%, #4faaff 100%);
+  color: #fff;
+  box-shadow: 0 4px 18px 0 rgba(120,90,255,0.07);
+}
+.btn-editar:hover {
+  background: linear-gradient(90deg, #4faaff 0%, #8e7fff 100%);
+  color: #fff;
+  box-shadow: 0 8px 32px 0 rgba(120,90,255,0.13);
+}
+
+.btn-configuracion {
+  background: linear-gradient(90deg, #e0e7ff 0%, #b9b6f3 100%);
+  color: #4e2ccf;
+}
+.btn-configuracion:hover {
+  background: linear-gradient(90deg, #b9b6f3 0%, #e0e7ff 100%);
+  color: #3b247a;
+}
+
+.perfil-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 12px 36px;
+  border: none;
+  background: linear-gradient(90deg, #8e7fff 0%, #4faaff 100%);
+  color: #fff;
+  border-radius: 18px 18px 0 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 0.02em;
+  margin-right: 8px;
+  box-shadow: 0 2px 8px 0 rgba(120,90,255,0.08);
+  transition: background 0.22s, color 0.22s, box-shadow 0.18s, transform 0.16s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+.tab-btn:not(.active):hover,
+.tab-btn:not(.active):focus {
+  background: linear-gradient(90deg, #e0e7ff 0%, #b9b6f3 100%);
+  color: #4e2ccf;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px 0 rgba(120,90,255,0.09);
+}
+.tab-btn.active {
+  background: linear-gradient(90deg, #4faaff 0%, #8e7fff 100%);
+  color: #fff;
+  box-shadow: 0 6px 24px 0 rgba(80,180,255,0.18);
+  border-bottom: 4px solid #8e7fff;
+  z-index: 2;
+  transform: scale(1.06);
+}
+
+
+.perfil-tab-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de envío de mensajes */
+
+/* --- PREMIUM CHAT LIST STYLES --- */
+.chat-list {
+  background: #fafdff;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0.5rem 0;
+  min-height: 400px;
+  max-height: 78vh;
+  overflow-y: auto;
+  /* Scrollbar premium para la columna de chats */
+  scrollbar-width: thin;
+  scrollbar-color: #b0e0ff #f7faff;
+}
+
+/* Scrollbar personalizado premium para la columna de chats */
+.chat-list::-webkit-scrollbar {
+  width: 8px;
+  background: #f7faff;
+  border-radius: 6px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #b0e0ff 0%, #92d1fa 100%);
+  border-radius: 6px;
+  border: 1px solid #f7faff;
+  min-height: 30px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.chat-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7fc7f9 0%, #5bb1e6 100%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.chat-list::-webkit-scrollbar-corner {
+  background: #f7faff;
+}
+
+/* Animación para el botón de calificar verde suave */
+@keyframes pulseGlowGreen {
+  0% {
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3), 0 0 0 0 rgba(76, 175, 80, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3), 0 0 12px 3px rgba(76, 175, 80, 0.2);
+  }
+}
+
+.chat-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.2s;
+  min-height: 62px;
+  position: relative;
+}
+
+.chat-list-item.selected,
+.chat-list-item:hover {
+  background: linear-gradient(90deg, #e6f2fb 0%, #f7fbff 100%);
+}
+
+.chat-list-item .chat-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #b0e0ff;
+  box-shadow: 0 2px 6px #92d1fa44;
+  object-fit: cover;
+  margin-right: 13px;
+  background: #f7faff;
+}
+
+.chat-list-item .chat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-list-item .chat-name {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-list-item .chat-badge {
+  margin-left: 8px;
+  background: linear-gradient(90deg, #2d9cdb 0%, #38a3e2 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 1px 4px #0001;
+}
+
+.chat-list-item .chat-preview {
+  font-size: 0.93rem;
+  color: #555;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.chat-input-bar {
+  box-shadow: 0 -3px 16px #0002;
+  background: #232c33;
+  border-radius: 0 0 16px 16px;
+  padding: 16px 14px 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-send, .btn-clip {
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  border-radius: 50%;
+  outline: none;
+}
+.btn-send:hover, .btn-clip:hover, .btn-send:focus, .btn-clip:focus {
+  background: #00bcd4 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px #00bcd4aa;
+}
+
+/* Estilos para la sección de artículos */
+.articulos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.articulo-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.articulo-imagen {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articulo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.articulo-info {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.articulo-info h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 1.2em;
+}
+
+.articulo-info p {
+  margin: 0 0 15px 0;
+  color: #666;
+  flex: 1;
+}
+
+.categoria {
+  display: inline-block;
+  padding: 4px 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.acciones-producto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.acciones-producto button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-intercambio {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-editar-producto {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-eliminar-producto {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-intercambio:hover {
+  background-color: #27ae60;
+}
+
+.btn-editar-producto:hover {
+  background-color: #2980b9;
+}
+
+.btn-eliminar-producto:hover {
+  background-color: #c0392b;
+}
+
+.btn-publicar {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 12px 120px !important;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 2px 12px #10b98122;
+  cursor: pointer;
+  margin: 0 auto 18px auto !important;
+  display: block !important;
+  width: auto !important;
+  min-width: 500px !important;
+  max-width: 800px !important;
+  text-align: center !important;
+  transition: background 0.16s, transform 0.12s, box-shadow 0.18s;
+  outline: none;
+}
+.btn-publicar:hover {
+  background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px #05966933;
+}
+
+/* Estilos para mensajes */
+.mensaje-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mensaje-card p {
+  margin: 5px 0;
+}
+
+/* Estilos para el botón de rating mejorado */
+.rating-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.rating-button:hover {
+  transform: translateY(-1px);
+}
+
+.rating-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stars-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+}
+
+.rating-value {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  min-width: 60px;
+  /* Exactamente los mismos estilos que .stat-value */
+}
+
+.mensaje-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.mensaje-card button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.mensaje-card button:hover {
+  background-color: #2980b9;
+}
+
+/* Estilos para transacciones */
+.mis-transacciones ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mis-transacciones li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.mis-transacciones li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perfil-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .perfil-info h1 {
+    font-size: 2rem;
+  }
+
+  .perfil-imagen {
+    width: 150px;
+    height: 150px;
+  }
+
+  .perfil-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .perfil-acciones,
+  .perfil-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-publicar {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .perfil-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .perfil-tabs::-webkit-scrollbar { display: none; }
+  .tab-btn { white-space: nowrap; padding: 10px 20px; font-size: 1rem; }
+
+  .articulos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .perfil-tabs {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .perfil-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn-publicar {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+/* Estilos para la sección de Donaciones y Solicitudes */
+.mis-donaciones,
+.mis-solicitudes {
+  margin-top: 2rem;
+}
+
+.donaciones-header,
+.solicitudes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.donaciones-acciones,
+.solicitudes-acciones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.donaciones-section,
+.solicitudes-section {
+  margin-bottom: 3rem;
+}
+
+.donaciones-section h3,
+.solicitudes-section h3 {
+  color: var(--primary-color, #2d9cdb);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary-color, #2d9cdb);
+  padding-bottom: 0.5rem;
+}
+
+.donaciones-grid,
+.solicitudes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.donacion-card,
+.solicitud-card {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+/* Contenedores de imágenes */
+.donacion-image-container,
+.solicitud-image-container {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.donacion-image,
+.solicitud-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.donacion-image-placeholder,
+.solicitud-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  color: #9ca3af;
+  font-size: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.donacion-content,
+.solicitud-content {
+  padding: 1.5rem;
+}
+
+.donacion-card:hover,
+.solicitud-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.donacion-card:hover .donacion-image,
+.solicitud-card:hover .solicitud-image {
+  transform: scale(1.05);
+}
+
+.donacion-header,
+.solicitud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.donacion-categoria,
+.solicitud-categoria {
+  background: var(--primary-color, #2d9cdb);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.donacion-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.donacion-status.available {
+  background: #10b981;
+  color: white;
+}
+
+.donacion-status.pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.donacion-status.completed {
+  background: #6b7280;
+  color: white;
+}
+
+.solicitud-urgencia {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.solicitud-urgencia.high {
+  background: #ef4444;
+  color: white;
+}
+
+.solicitud-urgencia.med {
+  background: #f59e0b;
+  color: white;
+}
+
+.solicitud-urgencia.low {
+  background: #10b981;
+  color: white;
+}
+
+.donacion-title,
+.solicitud-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.donacion-desc,
+.solicitud-desc {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.solicitud-necesidades {
+  margin-bottom: 1rem;
+}
+
+.solicitud-necesidades span {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.necesidades-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.necesidad-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  border: 1px solid #d1d5db;
+}
+
+.donacion-meta,
+.solicitud-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.donacion-fecha,
+.solicitud-fecha,
+.donacion-ubicacion,
+.solicitud-ubicacion {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.donacion-actions,
+.solicitud-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-ver,
+.btn-editar {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  flex: 1;
+}
+
+.btn-ver {
+  background: var(--primary-color, #2d9cdb);
+  color: white;
+}
+
+.btn-ver:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn-editar {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-editar:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-state svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: var(--primary-color, #2d9cdb);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .donaciones-header,
+  .solicitudes-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .donaciones-acciones,
+  .solicitudes-acciones {
+    justify-content: center;
+  }
+  
+  .donaciones-grid,
+  .solicitudes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .donacion-meta,
+  .solicitud-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .donacion-actions,
+  .solicitud-actions {
+    flex-direction: column;
+  }
+}
+
+/* --- Responsive Chat Layout --- */
+/* Base helpers in case inline styles are absent in some contexts */
+.chat-layout {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Small devices: stack list above messages */
+@media (max-width: 768px) {
+  .chat-layout { flex-direction: column; }
+  .chat-list {
+    width: 100% !important;
+    max-height: 40vh;
+    border-right: none !important;
+    border-bottom: 1px solid #ddd;
+    border-radius: 12px;
+  }
+}
+
+/* Phones: tighten paddings and text sizes inside chat list */
+@media (max-width: 480px) {
+  .chat-list { max-height: 45vh; }
+  .chat-list-item { min-height: 56px; }
+  .chat-list-item .chat-name { font-size: 0.95rem; }
+  .chat-list-item .chat-preview { max-width: 62vw; }
+  .chat-list-item .chat-avatar { width: 32px; height: 32px; }
+}
+
+/* Tablets: keep two columns but allow the list to breathe */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .chat-list { max-height: 72vh; }
+}
+
+/* --- Responsive overrides for WhatsApp-like send bar and message area --- */
+/* Tablets and down */
+@media (max-width: 1024px) {
+  /* Let messages breathe more on mid screens */
+  .chat-messages { max-height: 58vh !important; }
+}
+
+/* Small devices */
+@media (max-width: 768px) {
+  /* Constrain messages height and stack layout is already handled above */
+  .chat-messages { max-height: 50vh !important; }
+
+  /* Send bar compact spacing */
+  .whatsapp-send-bar {
+    padding: 0.9rem 1.1rem !important;
+    border-radius: 22px !important;
+    gap: 0.6rem !important;
+  }
+
+  /* Clip button smaller */
+  .whatsapp-send-bar .btn-clip {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 16px !important;
+    margin-right: 8px !important;
+  }
+
+  /* Textarea tighter */
+  .whatsapp-send-bar textarea {
+    min-height: 44px !important;
+    max-height: 110px !important;
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Send button smaller */
+  .whatsapp-send-bar .btn-send {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+    margin-left: 8px !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .chat-messages { max-height: 48vh !important; }
+
+  .whatsapp-send-bar {
+    padding: 0.7rem 0.9rem !important;
+    border-radius: 18px !important;
+    gap: 0.5rem !important;
+  }
+
+  .whatsapp-send-bar .btn-clip {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 15px !important;
+    margin-right: 6px !important;
+  }
+
+  .whatsapp-send-bar textarea {
+    min-height: 40px !important;
+    max-height: 96px !important;
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  .whatsapp-send-bar .btn-send {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 18px !important;
+    margin-left: 6px !important;
+  }
+}

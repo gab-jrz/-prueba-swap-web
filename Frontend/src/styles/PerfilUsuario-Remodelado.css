@@ -1,0 +1,258 @@
+/* --- PERFIL USUARIO REMODELADO MORADO --- */
+
+.perfil-usuario-container {
+  background: linear-gradient(135deg, #f7f7fa 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #2d3748;
+}
+
+.perfil-header-premium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 1rem 0;
+  background: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 2px 16px rgba(142,127,255,0.08);
+  margin-bottom: 2rem;
+}
+
+.avatar-container-premium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.avatar-wrapper-premium {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(142,127,255,0.12);
+  border: 3px solid #b9b6f3;
+}
+.avatar-image-premium {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-ring-premium {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #8e7fff;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.perfil-main-info-premium {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.perfil-nombre-premium {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #7c5fff;
+}
+.perfil-stats-premium {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.stat-card-premium {
+  background: #e0e7ff;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(142,127,255,0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.stat-card-premium:hover {
+  box-shadow: 0 4px 16px rgba(142,127,255,0.12);
+}
+.stat-number-premium {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8e7fff;
+}
+.stat-label-premium {
+  font-size: 0.95rem;
+  color: #6d6c8a;
+}
+
+.perfil-acciones-premium {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.btn-editar-premium, .btn-configuracion-premium {
+  background: linear-gradient(135deg, #7c5fff 0%, #b9b6f3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(142,127,255,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-editar-premium:hover, .btn-configuracion-premium:hover {
+  background: linear-gradient(135deg, #6d6c8a 0%, #7c5fff 100%);
+  box-shadow: 0 4px 16px rgba(142,127,255,0.12);
+}
+
+/* --- TABS --- */
+.perfil-tabs-premium {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.tab-btn-premium {
+  background: #e0e7ff;
+  color: #7c5fff;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn-premium.active {
+  background: linear-gradient(135deg, #7c5fff 0%, #b9b6f3 100%);
+  color: #fff;
+}
+
+/* --- CONTENIDO DE APARTADOS --- */
+.perfil-tab-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(142,127,255,0.10);
+  padding: 2rem 2.5rem;
+  min-height: 400px;
+}
+
+.mis-articulos, .mis-transacciones, .mis-favoritos, .mis-mensajes {
+  margin-bottom: 2rem;
+}
+.mis-articulos h2, .mis-transacciones h2, .mis-favoritos h2, .mis-mensajes h2 {
+  font-size: 1.5rem;
+  color: #7c5fff;
+  margin-bottom: 1.2rem;
+}
+
+.articulos-grid, .transacciones-grid, .donations-grid, .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+/* --- TARJETAS --- */
+.articulo-card, .transaction-card, .donation-card, .product-card {
+  background: #e0e7ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(142,127,255,0.10);
+  padding: 1.2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.articulo-card:hover, .transaction-card:hover, .donation-card:hover, .product-card:hover {
+  box-shadow: 0 4px 16px rgba(142,127,255,0.14);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* --- MENSAJES --- */
+.mis-mensajes .chat-layout {
+  display: flex;
+  gap: 1.2rem;
+}
+.chat-list {
+  width: 220px;
+  border-right: 1px solid #e0e7ff;
+  background: #f7f7fa;
+  border-radius: 12px 0 0 12px;
+  padding: 1rem 0.5rem;
+}
+.chat-list-item {
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  border-bottom: 1px solid #e0e7ff;
+  font-weight: 500;
+  transition: background 0.2s;
+  border-radius: 8px;
+}
+.chat-list-item.selected {
+  background: #7c5fff;
+  color: #fff;
+}
+.chat-badge {
+  background: #8e7fff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 78vh;
+  background: #f7f7fa;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.2rem;
+  overflow-y: auto;
+}
+
+/* --- ANIMACIÓN SUAVE DE ENTRADA --- */
+.reveal-hidden, .reveal-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .perfil-tab-content {
+    padding: 1.2rem 0.5rem;
+  }
+  .perfil-header-premium {
+    padding: 1.2rem 0 0.5rem 0;
+  }
+  .perfil-stats-premium {
+    gap: 1rem;
+  }
+  .articulos-grid, .transacciones-grid, .donations-grid, .product-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .chat-layout {
+    flex-direction: column;
+  }
+  .chat-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e7ff;
+    border-radius: 12px 12px 0 0;
+  }
+  .chat-messages {
+    border-radius: 0 0 12px 12px;
+    max-height: 50vh;
+  }
+}
+
+/* --- FIN PERFIL USUARIO REMODELADO MORADO --- */

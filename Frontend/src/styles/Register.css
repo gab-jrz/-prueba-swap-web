@@ -1,0 +1,250 @@
+/* src/styles/Register.css */
+
+/* Header styles */
+.register-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.register-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* Unificar estilos del enlace Home para mantener consistencia */
+.register-home-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.register-home-link:hover {
+    color: #2563eb;
+    background-color: #f3f4f6;
+}
+
+.register-home-link svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    color: inherit;
+}
+
+/* Botón de toggle de tema en header */
+.theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover { background: #f3f4f6; color: #111827; }
+.theme-toggle-btn svg { width: 20px; height: 20px; display: block; }
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 20px 20px;
+}
+
+.register-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.register-form h2 {
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    color: #1e293b;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 12px 0;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.register-form input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 4px 20px rgba(102, 126, 234, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+}
+
+.register-form input::placeholder {
+    color: #7c7c7c;
+    font-weight: 400;
+}
+
+.register-form select {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 12px 0 4px;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-weight: 500;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%236b7280" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.register-form select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 0 4px 20px rgba(102, 126, 234, 0.1);
+    outline: none;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.register-form button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.register-form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.register-form button:hover::before {
+    left: 100%;
+}
+
+.register-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+    filter: brightness(1.1);
+}
+
+.register-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.redirect-login {
+    margin-top: 24px;
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    line-height: 1.6;
+}
+
+.redirect-login a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.redirect-login a:hover {
+    color: #5b21b6;
+    text-decoration: underline;
+}
+
+/* Inline label + toggle for password fields */
+.password-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.password-label-row span {
+    font-weight: 600;
+    color: #495057;
+}
+
+.register-form .password-toggle {
+    background: transparent !important;
+    border: none !important;
+    color: #667eea;
+    cursor: pointer;
+    width: auto !important;
+    padding: 4px 6px !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.register-form .password-toggle:hover {
+    color: #5b21b6;
+    background: rgba(102, 126, 234, 0.08);
+}
+ 
+/* Dark mode removed on auth pages: forcing light mode only */

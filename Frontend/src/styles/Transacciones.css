@@ -1,0 +1,82 @@
+.transacciones-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+
+.transacciones-header {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.app-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-volver {
+  background-color: #fff;
+  color: #3498db;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-volver:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.transacciones-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.transacciones-lista {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaccion-item {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaccion-item h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.transaccion-item p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.transaccion-item p strong {
+  color: #34495e;
+}
+
+.estado-pendiente {
+  color: #f39c12;
+}
+
+.estado-aceptado {
+  color: #2ecc71;
+}

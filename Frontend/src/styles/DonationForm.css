@@ -1,0 +1,1674 @@
+/* Animación para el subrayado del título */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
+  50% { opacity: 0.7; transform: translateX(-50%) scaleX(1.1); }
+}
+
+/* Estilos para el título de la donación con mayor especificidad */
+.publicar-producto-container .publicar-form-card > h2:first-child {
+  all: unset;
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 40%, #4f9cfe 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  font-size: 2.75rem !important;
+  font-weight: 800 !important;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif !important;
+  letter-spacing: -0.03em !important;
+  position: relative !important;
+  text-shadow: 0 4px 12px rgba(102, 126, 234, 0.2) !important;
+  filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.15)) !important;
+  width: 100% !important;
+  padding-top: 1rem !important;
+  margin: 0 0 1.5rem 0 !important;
+}
+
+.publicar-producto-container .publicar-form-card > h2:first-child i {
+  margin-right: 12px !important;
+}
+
+/* Donation Form Styles */
+.donation-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #8b5cf6 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.form-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 300;
+}
+
+.donation-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Form Sections */
+.form-section {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.form-section:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.section-title i {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.optional-text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-left: auto;
+}
+
+/* Form Layout */
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group.full-width {
+  flex: 1;
+}
+
+.form-group.half-width {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Form Labels */
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-label i {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+}
+
+/* Form Inputs */
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background: var(--color-input-bg);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+.input-helper {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Characteristics Section */
+.caracteristicas-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.caracteristica-input {
+  flex: 1;
+  padding: 10px 0; /* sin caja interna */
+  border: 0 !important; /* elimina línea interna */
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.caracteristica-input:focus {
+  outline: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Overrides de alta especificidad dentro del chip para evitar cualquier borde/fondo interno */
+.caracteristicas-list .caracteristica-item .caracteristica-input,
+.caracteristicas-list .caracteristica-item .caracteristica-edit-input {
+  background: transparent !important;
+  border: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+  background-clip: padding-box !important;
+}
+
+/* Resets extra para inputs dentro del chip: eliminar cualquier decoración nativa */
+.caracteristica-item input,
+.caracteristica-item textarea {
+  border: 0 !important;
+  border-width: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-clip: padding-box !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Firefox inner focus padding/border */
+.caracteristica-item input::-moz-focus-inner {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* Edge/IE clear button */
+.caracteristica-item input::-ms-clear { display: none !important; }
+
+/* Safari/Chrome search decorations (por si el input fuera type=search) */
+.caracteristica-item input[type="search"]::-webkit-search-decoration,
+.caracteristica-item input[type="search"]::-webkit-search-cancel-button,
+.caracteristica-item input[type="search"]::-webkit-search-results-button,
+.caracteristica-item input[type="search"]::-webkit-search-results-decoration {
+  display: none !important;
+}
+
+.btn-agregar-caracteristica {
+  padding: 10px 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-agregar-caracteristica:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-agregar-caracteristica:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.caracteristicas-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.caracteristica-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-chip-bg, #f1f5f9);
+  color: var(--color-chip-text, #334155);
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-chip-border, #e2e8f0);
+}
+
+.caracteristica-chip span {
+  margin-right: 6px;
+}
+
+.remove-caracteristica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-chip-remove, #64748b);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.remove-caracteristica:hover {
+  background: var(--color-chip-remove-hover, #e2e8f0);
+  color: var(--color-chip-remove-hover-text, #334155);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.caracteristicas-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.caracteristicas-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-add-caracteristica {
+  padding: 10px 14px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-caracteristica:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-add-caracteristica:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.caracteristicas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 0;
+  border: none; /* evita líneas inesperadas */
+}
+
+.caracteristica-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.caracteristica-bullet {
+  font-size: 1rem;
+  color: #10b981;
+  flex: 0 0 auto;
+}
+
+.caracteristica-edit-input {
+  flex: 1 1 auto;
+  border: none !important;
+  /* mantener el radius del chip; no forzar radius aquí */
+  background: transparent !important;
+  padding: 0.25rem 0 !important;
+  font-size: 0.95rem !important;
+  color: #374151 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 0;
+}
+
+.caracteristica-edit-input:focus {
+  outline: none !important;
+  border: none !important; /* sin subrayado ni contorno interno */
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Forzar reset en cualquier input de texto dentro del chip para evitar línea circular */
+.caracteristica-item input[type="text"] {
+  border: 0 !important;
+  /* no tocar el radius para que el chip conserve sus esquinas redondeadas */
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Evitar líneas/rellenos por autofill (Chrome, Edge) dentro del chip */
+.caracteristica-item input[type="text"]:-webkit-autofill,
+.caracteristica-item input[type="text"]:-webkit-autofill:hover,
+.caracteristica-item input[type="text"]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: inherit !important;
+  caret-color: inherit !important;
+}
+
+.btn-remove-caracteristica {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-remove-caracteristica:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.caracteristicas-limits {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.caracteristicas-error {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--color-error);
+}
+
+.add-characteristic-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-characteristic-btn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.add-characteristic-btn:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.characteristics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.characteristic-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-primary-border);
+}
+
+.characteristic-text {
+  font-weight: 500;
+}
+
+.remove-characteristic-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  transition: all 0.2s ease;
+}
+
+.remove-characteristic-btn:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.characteristics-info {
+  padding: 8px 12px;
+  background: var(--color-info-bg);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-info);
+}
+
+.characteristics-info small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-info);
+  font-size: 0.85rem;
+}
+
+/* Photo Upload Section */
+.photo-upload-container {
+  margin-top: 8px;
+}
+
+.photo-drop-zone {
+  border: 2px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--color-upload-bg);
+  margin-bottom: 16px;
+}
+
+.photo-drop-zone:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.photo-drop-zone.dragging {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  transform: scale(1.02);
+}
+
+.photo-drop-zone.has-images {
+  padding: 20px;
+}
+
+.upload-placeholder {
+  color: var(--color-text-secondary);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.upload-placeholder h4 {
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.upload-placeholder p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.upload-specs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--color-success);
+}
+
+.upload-specs span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.photo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.photo-preview-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo-preview-item:hover .photo-overlay {
+  opacity: 1;
+}
+
+.remove-photo-btn {
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.remove-photo-btn:hover {
+  background: var(--color-danger-hover);
+  transform: scale(1.1);
+}
+
+.main-photo-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--color-warning);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-more-photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-border-light);
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  aspect-ratio: 1;
+  transition: all 0.3s ease;
+}
+
+.add-more-photos:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.photo-tips {
+  background: var(--color-tip-bg);
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.photo-tips h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.photo-tips ul {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--color-text-secondary);
+}
+
+.photo-tips li {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 24px 0;
+  margin-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Normalize action buttons inside donation form */
+.form-actions .btn-regresar,
+.form-actions .btn-publicar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: auto; /* permitir crecer como en producto */
+  padding: 1.5rem 3rem; /* mismo tamaño que Publicar Producto */
+  white-space: nowrap;
+  margin: 0; /* neutralize external margins */
+}
+
+/* Alinear tamaño del botón de Publicar Donación al de Publicar Producto */
+.publicar-producto-container .publicar-form-card .form-actions .btn-publicar {
+  display: inline-flex !important;
+  margin: 0 !important;
+  width: fit-content !important;
+  height: auto !important;
+  padding: 1.5rem 3rem !important; /* igual que PublicarProducto.css */
+  border-radius: 12px !important;
+}
+
+/* Ensure icons have spacing but don't stretch height */
+.form-actions .btn-regresar i,
+.form-actions .btn-publicar i {
+  margin-right: 8px;
+}
+
+.btn-primary, .btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-border-light);
+  transform: translateY(-1px);
+}
+
+/* Privacy Option Styles */
+.privacy-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.privacy-option:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.privacy-checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.privacy-label {
+  flex: 1;
+  cursor: pointer;
+  margin: 0;
+}
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.privacy-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.privacy-title i {
+  color: var(--color-primary);
+}
+
+.privacy-description {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* File Preview Styles */
+.files-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.file-preview-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+  background: var(--color-card);
+}
+
+.document-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+  background: var(--color-border-light);
+}
+
+.document-preview i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.document-name {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.file-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.file-preview-item:hover .file-overlay {
+  opacity: 1;
+}
+
+.remove-file-btn {
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.remove-file-btn:hover {
+  background: var(--color-danger-hover);
+  transform: scale(1.1);
+}
+
+.add-more-files {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-border-light);
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  aspect-ratio: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.add-more-files:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Request specific styling */
+.form-header h2 i.fa-hands-helping {
+  color: #10b981;
+}
+
+/* Urgency level styling */
+.form-select[name="urgency"] option[value="high"] {
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.form-select[name="urgency"] option[value="med"] {
+  color: var(--color-warning);
+  font-weight: 500;
+}
+
+.form-select[name="urgency"] option[value="low"] {
+  color: var(--color-success);
+}
+
+/* Enhanced tips for requests */
+.photo-tips h4 i.fa-lightbulb {
+  color: #f59e0b;
+}
+
+/* Error Messages */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  border-left: 3px solid var(--color-error);
+}
+
+/* Notification Styles */
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+}
+
+.notification.success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-left: 4px solid var(--color-success);
+}
+
+.notification.error {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-left: 4px solid var(--color-error);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .form-group.half-width {
+    flex: none;
+  }
+  
+  .characteristics-input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .upload-specs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .photo-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .photo-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix: Ensure select's selected text is visible in light and dark themes.
+   Some pages use body.dark-mode while others use data-theme="dark" or prefers-color-scheme;
+   enforce sensible defaults here and override aggressive rules elsewhere. */
+.donation-form .form-select,
+.form-select {
+  color: var(--color-text-primary) !important;
+  background: var(--color-input-bg) !important;
+  border-color: var(--color-border) !important;
+  padding-right: 2.5rem !important;
+  appearance: none !important;
+}
+
+/* Dark-mode fallbacks when site toggles dark via body class or data-theme attr */
+body.dark-mode .donation-form .form-select,
+[data-theme="dark"] .donation-form .form-select,
+body.dark-mode .form-select,
+[data-theme="dark"] .form-select {
+  color: #e5e7eb !important; /* light text */
+  background: #2d1b4e !important; /* dark bg */
+  border-color: #3d2b5e !important;
+}
+
+body.dark-mode .donation-form .form-select option,
+[data-theme="dark"] .donation-form .form-select option,
+body.dark-mode .form-select option,
+[data-theme="dark"] .form-select option {
+  color: #e5e7eb !important;
+  background: #2d1b4e !important;
+}
+
+/* Make hovered/selected options clearly visible in selects */
+.form-select option,
+.donation-form .form-select option {
+  color: var(--color-text-primary) !important;
+  background: var(--color-input-bg) !important;
+}
+
+.form-select option:hover,
+.form-select option:focus,
+.form-select option:checked,
+.form-select option[selected] {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode: stronger highlight color for hovered/selected option */
+body.dark-mode .form-select option:hover,
+[data-theme="dark"] .form-select option:hover,
+body.dark-mode .donation-form .form-select option:hover,
+[data-theme="dark"] .donation-form .form-select option:hover,
+body.dark-mode .form-select option:checked,
+[data-theme="dark"] .form-select option:checked {
+  background: rgba(123, 47, 242, 0.9) !important; /* vivid purple */
+  color: #ffffff !important;
+}
+
+/* Strong override for light mode selects: undo any transparent text tricks elsewhere */
+html body:not(.dark-mode) .donation-form .form-select,
+html body:not(.dark-mode) .donation-form select.form-select,
+body:not(.dark-mode) .donation-form .form-select,
+body:not(.dark-mode) .donation-form select.form-select,
+.donation-form .form-select:not([data-dark]) {
+  color: var(--color-text-primary) !important;
+  -webkit-text-fill-color: var(--color-text-primary) !important;
+  -webkit-text-stroke-color: initial !important;
+  -webkit-text-stroke-width: 0 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  background-clip: border-box !important;
+}
+
+/* Also ensure the closed select shows the selected text (for Edge/IE) */
+.donation-form .form-select::-ms-value,
+.donation-form select.form-select::-ms-value,
+.form-select::-ms-value {
+  color: var(--color-text-primary) !important;
+}
+
+/* CSS Variables for theming */
+:root {
+  --color-primary: #6366f1;
+  --color-primary-hover: #5855eb;
+  --color-primary-light: #eef2ff;
+  --color-primary-border: #c7d2fe;
+  --color-secondary: #f8fafc;
+  --color-card: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-input-bg: #ffffff;
+  --color-upload-bg: #fafbfc;
+  --color-info: #3b82f6;
+  --color-info-bg: #eff6ff;
+  --color-success: #10b981;
+  --color-success-bg: #ecfdf5;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-disabled: #94a3b8;
+  --color-tip-bg: #f8fafc;
+}
+
+/* Light mode styles */
+.publicar-producto-container {
+  /* Asegura el mismo ancho y centrado que en PublicarProducto */
+  max-width: 1400px !important;
+  margin: 2rem auto !important;
+}
+
+.publicar-producto-container {
+  background-color: #ffffff;
+  color: #1a202c;
+}
+
+.publicar-form-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+/* Recuadro más angosto y centrado SOLO para Donación */
+.donation-light .publicar-producto-container .publicar-form-card,
+.publicar-producto-container.donation .publicar-form-card,
+.publicar-producto-container[data-theme] .publicar-form-card {
+  max-width: 1000px; /* más delgado que ocupar todo el ancho */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1140px) {
+  .donation-light .publicar-producto-container .publicar-form-card,
+  .publicar-producto-container.donation .publicar-form-card,
+  .publicar-producto-container[data-theme] .publicar-form-card {
+    max-width: 92%;
+  }
+}
+
+/* Limitar ancho del formulario dentro de la card para que no se vea extendido */
+.publicar-form-card .publicar-producto-form {
+  max-width: 800px;       /* igualar ancho efectivo del formulario de producto */
+  margin: 0 auto;         /* centrar */
+}
+
+/* También limitar el ancho del párrafo descriptivo bajo el título */
+.publicar-form-card > p {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.publicar-form-card h5,
+.publicar-form-card h6,
+.publicar-form-card p,
+.publicar-form-card label,
+.publicar-form-card .input-helper {
+  color: #1a202c;
+}
+  
+  /* Campos de formulario */
+  .publicar-producto-form input[type="text"],
+  .publicar-producto-form input[type="email"],
+  .publicar-producto-form input[type="password"],
+  .publicar-producto-form textarea,
+  .publicar-producto-form select,
+  .publicar-form-card input,
+  .publicar-form-card textarea,
+  .publicar-form-card select,
+  /* Estilos de formulario heredados del tema claro */
+
+  /* Placeholders */
+  .publicar-producto-form ::-webkit-input-placeholder,
+  .publicar-form-card ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #a0aec0 !important;
+    opacity: 1 !important;
+  }
+  
+  .publicar-producto-form ::-moz-placeholder,
+  .publicar-form-card ::-moz-placeholder { /* Firefox 19+ */
+    color: #a0aec0 !important;
+    opacity: 1 !important;
+  }
+  
+  .publicar-producto-form :-ms-input-placeholder,
+  .publicar-form-card :-ms-input-placeholder { /* IE 10+ */
+    color: #a0aec0 !important;
+    opacity: 1 !important;
+  }
+  
+  .publicar-producto-form :-moz-placeholder,
+  .publicar-form-card :-moz-placeholder { /* Firefox 18- */
+    color: #a0aec0 !important;
+    opacity: 1 !important;
+  }
+  
+  /* Textos de ayuda */
+  .publicar-form-card .input-helper,
+  .publicar-form-card .optional-text {
+    color: var(--color-placeholder);
+  }
+  
+  /* Dropdowns */
+  .publicar-producto-form select {
+    background-color: var(--color-input-bg);
+    color: var(--color-input-text);
+    border-color: var(--color-border);
+  }
+  
+  .publicar-producto-form select option {
+    background-color: var(--color-card);
+    color: var(--color-text-primary);
+    padding: 8px 12px;
+  }
+  
+  option {
+    background-color: var(--color-card);
+    color: var(--color-text-primary);
+  }
+  
+  .form-section {
+    background: var(--color-card);
+    border-color: var(--color-border);
+  }
+  
+  .form-header {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+  }
+  
+  .upload-area {
+    border-color: var(--color-border);
+    background-color: var(--color-upload-bg);
+  }
+  
+  .photo-tips {
+    background-color: var(--color-tip-bg);
+    border-color: var(--color-border);
+  }
+  
+  .characteristic-chip {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-primary);
+  }
+  
+  .btn-primary {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-secondary);
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #3b4252;
+    border-color: #4c566a;
+  }
+  
+  /* Asegurar que los textos sean legibles */
+  .section-title,
+  .form-label,
+  .upload-placeholder h4,
+  .upload-placeholder p,
+  .photo-tips h4,
+  .photo-tips li,
+  .input-helper,
+  .optional-text,
+  .notification,
+  .privacy-title,
+  .privacy-description,
+  label,
+  p,
+  h1, h2, h3, h4, h5, h6,
+  .text-gray-700,
+  .text-gray-800 {
+    color: var(--color-text-primary) !important;
+  }
+  
+  /* Secciones del formulario */
+  .form-group {
+    background-color: var(--color-card);
+    border-color: var(--color-border);
+  }
+  
+  /* Área de carga de imágenes */
+  .upload-area {
+    background-color: var(--color-upload-bg) !important;
+    border-color: var(--color-border) !important;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: #4c51bf !important;
+    border-color: #4c51bf !important;
+    color: white !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #434190 !important;
+    border-color: #434190 !important;
+  }
+  
+  /* Características del producto: NO aplicar caja interna en inputs del chip */
+  .caracteristica-input, .caracteristica-edit-input {
+    background: transparent !important;
+    color: var(--color-text-primary) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    background-clip: padding-box !important;
+  }
+
+  /* Anular reglas de PublicarProducto.css que agregan línea inferior al enfocar */
+  .publicar-producto-form .caracteristica-edit-input:focus,
+  .publicar-producto-form .caracteristica-edit-input:focus-visible,
+  .publicar-producto-form .caracteristica-edit-input:hover,
+  .publicar-producto-form .caracteristica-edit-input:active {
+    border: 0 !important;
+    border-bottom: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Maximizar especificidad dentro del chip */
+  .publicar-producto-form .form-group .caracteristicas-list .caracteristica-item .caracteristica-edit-input,
+  .publicar-producto-form .form-group .caracteristicas-list .caracteristica-item .caracteristica-edit-input:focus,
+  .publicar-producto-form .form-group .caracteristicas-list .caracteristica-item .caracteristica-edit-input:hover,
+  .publicar-producto-form .form-group .caracteristicas-list .caracteristica-item .caracteristica-edit-input:active,
+  .publicar-producto-form .form-group .caracteristicas-input-row .caracteristica-input,
+  .publicar-producto-form .form-group .caracteristicas-input-row .caracteristica-input:focus,
+  .publicar-producto-form .form-group .caracteristicas-input-row .caracteristica-input:hover,
+  .publicar-producto-form .form-group .caracteristicas-input-row .caracteristica-input:active {
+    border: none !important;
+    border-bottom: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border-image: initial !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Ocultar botones/controles internos de Edge/WebKit que puedan parecer línea */
+  .caracteristica-edit-input::-ms-clear, 
+  .caracteristica-input::-ms-clear { display: none !important; width: 0; height: 0; }
+  .caracteristica-edit-input::-ms-reveal, 
+  .caracteristica-input::-ms-reveal { display: none !important; width: 0; height: 0; }
+  .caracteristica-edit-input::-webkit-search-cancel-button, 
+  .caracteristica-input::-webkit-search-cancel-button { display: none !important; }
+  .caracteristica-edit-input::-webkit-contacts-auto-fill-button, 
+  .caracteristica-input::-webkit-contacts-auto-fill-button { visibility: hidden !important; display: none !important; }
+
+  /* Desactivar ring por accesibilidad de Chromium que puede dibujar halo interno */
+  .caracteristica-edit-input:focus-visible,
+  .caracteristica-input:focus-visible {
+    outline: none !important;
+  }
+
+  /* También resetear el input de agregar característica dentro de la fila */
+  .publicar-producto-form .caracteristicas-input-row .caracteristica-input,
+  .publicar-producto-form .caracteristicas-input-row .caracteristica-input:focus,
+  .publicar-producto-form .caracteristicas-input-row .caracteristica-input:hover,
+  .publicar-producto-form .caracteristicas-input-row .caracteristica-input:active,
+  .publicar-producto-form .caracteristicas-input-row .caracteristica-input:focus-visible {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  
+  .caracteristicas-list {
+    border-color: transparent !important;
+  }
+  
+  .caracteristica-item {
+    background-color: var(--color-input-bg);
+    border-color: var(--color-border);
+  }
+
+  /* Mostrar borde/halo del chip cuando el input interno está activo */
+  .publicar-producto-form .caracteristicas-list .caracteristica-item {
+    border-width: 1.5px !important;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  }
+
+  .publicar-producto-form .caracteristicas-list .caracteristica-item:focus-within {
+    border-color: #667eea !important; /* violeta consistente */
+    box-shadow: 0 0 0 4px rgba(102,126,234,0.15) !important; /* halo suave externo */
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important; /* sutil realce */
+  }
+
+  /* Estilo del contenedor de la fila de ingreso (input + botón +) */
+  .publicar-producto-form .caracteristicas-input-row {
+    padding: 0.75rem 1rem !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03) inset !important;
+    position: relative;
+  }
+
+  .publicar-producto-form .caracteristicas-input-row:focus-within {
+    border-style: solid !important;
+    border-width: 1.5px !important;
+    border-color: #667eea !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    /* anillo visible incluso en Edge */
+    outline: 2px solid rgba(102,126,234,0.6) !important;
+    outline-offset: 0 !important;
+    box-shadow:
+      0 0 0 4px rgba(102,126,234,0.15) !important; /* halo externo */
+    z-index: 1;
+  }
+
+  /* Fallback extra: usar :has() para asegurar borde cuando el input tiene foco */
+  .publicar-producto-form .caracteristicas-input-row:has(.caracteristica-input:focus),
+  .publicar-producto-form .caracteristicas-input-row:has(.caracteristica-input:focus-visible) {
+    border-style: solid !important;
+    border-width: 1.5px !important;
+    border-color: #667eea !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  }
+
+  /* Refuerzo: pseudo-elemento para dibujar un anillo claro en Edge/Chromium */
+  .publicar-producto-form .caracteristicas-input-row::after {
+    content: '';
+    position: absolute;
+    inset: -2px; /* cubre el borde */
+    border-radius: 14px; /* border-radius + anillo */
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+
+  .publicar-producto-form .caracteristicas-input-row:focus-within::after {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102,126,234,0.15);
+  }
+
+
+/* Light-mode donation overrides: force black text and white backgrounds */
+.donation-light {
+  --color-text-primary: #000000;
+  --color-text-secondary: #000000;
+  --color-card: #ffffff;
+  --color-input-bg: #ffffff;
+  --color-upload-bg: #ffffff;
+  --color-border-light: #ffffff;
+  --color-secondary: #ffffff;
+  --color-info-bg: #ffffff;
+  --color-error-bg: #ffffff;
+  --color-tip-bg: #ffffff;
+  --color-primary-light: #ffffff;
+}
+
+.donation-light .form-header {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid var(--color-border);
+}
+
+.donation-light .section-title,
+.donation-light .form-label,
+.donation-light .upload-placeholder h4,
+.donation-light .upload-placeholder p,
+.donation-light .photo-tips h4,
+.donation-light .photo-tips li,
+.donation-light .input-helper,
+.donation-light .optional-text,
+.donation-light .notification,
+.donation-light .privacy-title,
+.donation-light .privacy-description {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+/* Extra specificity for labels and section titles to ensure visibility */
+.donation-light .form-section .form-label,
+.donation-light .form-section .section-title {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+/* Ensure any plain labels/headings inside donation-light are visible */
+.donation-light label,
+.donation-light .form-group label,
+.donation-light legend,
+.donation-light h1,
+.donation-light h2,
+.donation-light h3,
+.donation-light h4,
+.donation-light h5,
+.donation-light h6 {
+  color: #000000 !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+.donation-light .form-input,
+.donation-light .form-select,
+.donation-light .form-textarea,
+.donation-light .characteristics-input {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: var(--color-border) !important;
+}
+
+.donation-light .form-select option {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.donation-light .form-section,
+.donation-light .privacy-option,
+.donation-light .file-preview-item,
+.donation-light .document-preview,
+.donation-light .photo-drop-zone,
+.donation-light .add-more-photos,
+.donation-light .add-more-files {
+  background: #ffffff !important;
+}
+
+/* Neutralize premium gradients/blur/shadows coming from PublicarProducto.css inside donation light form */
+.donation-light .publicar-producto-container .form-group input[type="text"],
+.donation-light .publicar-producto-container .form-group textarea,
+.donation-light .publicar-producto-container .form-group select,
+.donation-light .donation-form .form-input,
+.donation-light .donation-form .form-textarea,
+.donation-light .donation-form .form-select {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: 2px solid #cbd5e1 !important; /* light slate border for contrast */
+}
+
+.donation-light .publicar-producto-container .form-group input[type="text"]::placeholder,
+.donation-light .publicar-producto-container .form-group textarea::placeholder,
+.donation-light .donation-form .form-input::placeholder,
+.donation-light .donation-form .form-textarea::placeholder {
+  color: #6b7280 !important; /* readable grey */
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* On focus keep white bg and subtle primary border only */
+.donation-light .publicar-producto-container .form-group input[type="text"]:focus,
+.donation-light .publicar-producto-container .form-group textarea:focus,
+.donation-light .publicar-producto-container .form-group select:focus,
+.donation-light .donation-form .form-input:focus,
+.donation-light .donation-form .form-textarea:focus,
+.donation-light .donation-form .form-select:focus {
+  background: #ffffff !important;
+  box-shadow: none !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Footer color fixes scoped ONLY to the donation publish page */
+.donation-light .footer-modern,
+.donation-light .footer-modern *,
+.donation-light .footer-modern .footer-title,
+.donation-light .footer-modern h5,
+.donation-light .footer-modern h6,
+.donation-light .footer-modern a,
+.donation-light .footer-modern p,
+.donation-light .footer-modern li,
+.donation-light .footer-modern svg {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+/* Ensure footer links keep white on hover/focus as well */
+.donation-light .footer-modern a:hover,
+.donation-light .footer-modern a:focus {
+  color: #ffffff !important;
+}

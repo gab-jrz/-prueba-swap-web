@@ -1,0 +1,321 @@
+/* DonationDetailPremium.css - Estilos adicionales específicos para donaciones */
+
+/* Modal específico para reportes de donaciones */
+.report-select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.report-select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.report-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.report-textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.btn-modal-reportar {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modal-reportar:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Características de la donación */
+.producto-caracteristicas-premium {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.caracteristicas-title-premium {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.caracteristicas-list-premium {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.caracteristica-item-premium {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.caracteristica-item-premium:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+  border-color: #cbd5e1;
+}
+
+.caracteristica-icon-premium {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.caracteristica-text {
+  color: #334155;
+  font-weight: 600;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Status específicos para donaciones */
+.status-disponible {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.status-reservado {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.status-entregado {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.status-no-disponible {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+}
+
+/* Iconos específicos para donaciones */
+.categoria-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+/* Botón de favoritos específico para donaciones */
+.btn-favorito-premium.favorito-activo {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  transform: scale(1.1);
+}
+
+.btn-favorito-premium.favorito-activo svg {
+  fill: white;
+}
+
+/* Atributo clickeable para navegar al perfil del donador */
+.atributo-valor-premium.clickeable {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.atributo-valor-premium.clickeable:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Navegación sutil específica para donaciones */
+.detalle-nav-sutil .nav-link.reportar {
+  color: #dc3545;
+}
+
+.detalle-nav-sutil .nav-link.reportar:hover {
+  color: #c82333;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Responsive específico para donaciones */
+@media (max-width: 768px) {
+  .report-select,
+  .report-textarea {
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+  
+  .btn-modal-reportar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Loading específico para donaciones */
+.producto-loading .loading-text {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Bigger category bubble in Donation Detail header */
+.detalle-card-premium .product-categoria-badge {
+  font-size: 0.95rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.28);
+}
+
+/* ----- Menú de 3 puntos en la imagen (esquina superior derecha) ----- */
+.producto-imagen-container-premium {
+  position: relative; /* para posicionar el trigger y el menú */
+  overflow: visible; /* evita cortes del menú */
+}
+
+.image-menu-trigger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  z-index: 3;
+}
+
+.image-menu-trigger:hover {
+  color: #667eea;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* Menú contextual flotante */
+.context-menu-report {
+  position: absolute; /* anclado al contenedor de imagen */
+  top: 52px; /* debajo del trigger */
+  right: 10px; /* alineado con el trigger */
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 6px;
+  z-index: 50;
+  animation: fadeInMenu 120ms ease-out;
+}
+
+.context-menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: #0f172a;
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.context-menu-item:hover {
+  background: #f8fafc;
+}
+
+.context-menu-item.danger {
+  color: #dc2626;
+}
+
+.context-menu-item.danger:hover {
+  background: rgba(220, 38, 38, 0.06);
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Placeholder para cuando no hay imágenes en donaciones */
+.no-image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  color: #6c757d;
+}
+
+.no-image-placeholder svg {
+  opacity: 0.3;
+  margin-bottom: 1rem;
+}
+
+.no-image-placeholder p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
