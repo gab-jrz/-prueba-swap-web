@@ -2,5 +2,6 @@
   "rewrites": [
     { "source": "/diagnostico.html", "destination": "/diagnostico.html" },
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "outputDirectory": "dist"
 }

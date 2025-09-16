@@ -1,0 +1,19 @@
+# Ignorar dependencias y archivos temporales
+node_modules/
+dist/
+build/
+.env
+*.log
+coverage/
+tmp/
+.DS_Store
+# Ignorar archivos de sistema
+Thumbs.db
+# Ignorar archivos de pruebas
+*.test.js
+*.test.jsx
+# Ignorar archivos de configuración temporales
+.temp*
+# Ignorar carpetas de IDE
+.vscode/
+.idea/
